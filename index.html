@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#0b0f1a" />
+    <title>Networking of Cities</title>
+    <style>:root{--bg:#0b0f1a;--panel:#141b2e;--line:#26324d;--text:#cfd8ee;--dim:#7d90b8;--gold:#ffe9a8}*{box-sizing:border-box}html,body,button,.card,#hand,#bar{touch-action:manipulation}html,body{background:var(--bg);height:100%;color:var(--text);overscroll-behavior:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;margin:0;font-family:system-ui,-apple-system,Hiragino Sans,sans-serif;overflow:hidden}canvas{touch-action:none;width:100%;height:100%;display:block;position:fixed;inset:0}#bar{height:64px;padding:calc(env(safe-area-inset-top) + 8px) 14px 6px;pointer-events:none;flex-direction:column;justify-content:center;gap:3px;display:flex;position:fixed;top:0;left:0;right:0}#bar .row{color:var(--dim);justify-content:space-between;align-items:center;font-size:13px;display:flex}#bar .row b{color:var(--text);font-weight:600}#goal{color:var(--text);font-size:13px}#newbtn.armed{color:#ffb4b4;border-color:#5a3040}#speed{right:12px;bottom:calc(env(safe-area-inset-bottom) + 150px);flex-direction:column;gap:8px;display:flex;position:fixed}#speed button{width:44px;height:44px;color:var(--text);border:1px solid var(--line);background:#141b2ed9;border-radius:22px;padding:0;font-size:15px}#speed button.on{border-color:var(--gold);color:var(--gold)}#recbtn,#newbtn{pointer-events:auto;color:var(--dim);border:1px solid var(--line);background:0 0;border-radius:12px;margin-left:6px;padding:3px 9px;font-size:11px}#msg{text-align:center;color:var(--gold);opacity:0;pointer-events:none;text-shadow:0 0 8px #000;font-size:14px;line-height:1.6;transition:opacity .8s;position:fixed;top:78px;left:18px;right:18px}#msg.show{opacity:1}#toast{color:#ffb4b4;opacity:0;pointer-events:none;text-align:center;background:#2a1c24;border:1px solid #5a3040;border-radius:16px;width:max-content;max-width:calc(100% - 32px);padding:7px 14px;font-size:13px;transition:opacity .3s;position:fixed;bottom:170px;left:50%;transform:translate(-50%)}#toast.show{opacity:1}#info{left:14px;right:14px;bottom:calc(env(safe-area-inset-bottom) + 108px);min-height:0;color:var(--dim);text-align:center;pointer-events:none;font-size:12px;line-height:1.6;position:fixed}#info b{color:var(--text)}#hand{height:calc(env(safe-area-inset-bottom) + 100px);padding:8px 12px calc(env(safe-area-inset-bottom) + 10px);justify-content:center;align-items:stretch;gap:10px;display:flex;position:fixed;bottom:0;left:0;right:0}.card{background:var(--panel);border:1px solid var(--line);touch-action:none;border-radius:12px;flex-direction:column;flex:1;justify-content:center;gap:4px;max-width:112px;padding:8px;display:flex}.card .n{color:var(--text);font-size:13px}.card .d{color:var(--dim);font-size:11px}.card .dot,#info .dot{border-radius:50%;width:8px;height:8px;margin-right:5px;display:inline-block}.card.sel{border-color:var(--gold);box-shadow:0 0 12px #ffe9a84d}.card.empty{opacity:.25;border-style:dashed;justify-content:center;align-items:center}#finish{text-align:center;background:#080b14d1;flex-direction:column;justify-content:center;align-items:center;gap:14px;padding:24px;display:none;position:fixed;inset:0}#finish.show{display:flex}#finish h1{color:var(--gold);margin:0;font-size:20px;font-weight:500;line-height:1.6}#finish p{color:var(--dim);margin:0;font-size:13px;line-height:1.7}#finish button{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:14px;margin:3px;padding:10px 20px;font-size:14px}</style>
+    <script type="module" crossorigin src="./assets/index-DFJg1j0z.js"></script>
+  </head>
+  <body>
+    <canvas id="c"></canvas>
+    <div id="bar">
+      <div class="row"><span>年 <b id="year">0</b></span><span>進化 <b id="evo">0/3</b></span><span><button id="newbtn">はじめから</button><button id="recbtn">記録をコピー</button></span></div>
+      <div class="row" style="color:var(--text)"><span id="goal">3つの都市を進化させよう</span><span id="next" style="font-size:11px;color:var(--dim)"></span></div>
+    </div>
+    <div id="speed"><button id="pause">⏸</button><button id="fast">×1</button></div>
+    <div id="msg"></div>
+    <div id="toast"></div>
+    <div id="info"></div>
+    <div id="hand"></div>
+    <div id="finish">
+      <h1 id="finishText"></h1>
+      <p id="finishSub"></p>
+      <div><button id="again">もう一度</button><button id="rec2">記録をコピー</button></div>
+    </div>
+  </body>
+</html>
